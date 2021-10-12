@@ -88,9 +88,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT( \
   _______,  KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                            KC_F6, KC_F7, KC_F8, KC_F9, XXXXXXX, XXXXXXX, \
-  _______, _______, BUF_LEFT, WIN_UP, BUF_RIGHT, _______,                     _______, _______, _______, _______, _______, _______, \
-  _______,  KC_F2,    WIN_LEFT,   WIN_DOWN,   WIN_RIGHT,   KC_F6,                 XXXXXXX, KC_PLUS, KC_MINS, KC_EQL, XXXXXXX, XXXXXXX, \
-  _______,   KC_F8,   XXXXXXX,   XXXXXXX,  XXXXXXX,  KC_F12,   _______, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_BSLS, _______, \
+  _______, XXXXXXX, BUF_LEFT, WIN_UP, BUF_RIGHT, XXXXXXX,                     _______, _______, _______, _______, _______, _______, \
+  _______,  XXXXXXX,    WIN_LEFT,   WIN_DOWN,   WIN_RIGHT,   _______,                 XXXXXXX, KC_PLUS, KC_MINS, KC_EQL, XXXXXXX, XXXXXXX, \
+  _______,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,   _______, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_BSLS, _______, \
                              _______, _______, _______,  _______, _______,  _______, _______, _______ \
 ),
 /* ADJUST
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, KC_PGUP, FAST_MOVE_UP, KC_PGDOWN, XXXXXXX,                   XXXXXXX, KC_AUDIO_VOL_DOWN, XXXXXXX, KC_AUDIO_VOL_UP, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, FAST_MOVE_LEFT, FAST_MOVE_DOWN, FAST_MOVE_RIGHT, XXXXXXX,  XXXXXXX, KC_MEDIA_PREV_TRACK,  KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK,  XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_INS , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL, KC_INS , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
                              _______, _______, _______, _______, _______,  _______, _______, _______ \
   )
 };
@@ -206,7 +206,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case QMKBEST:
         if (record->event.pressed) {
             // when keycode QMKBEST is pressed
-            SEND_STRING("QMK is the best ZZZZzzzzing ever!");
+            SEND_STRING("QMK üöä!");
         } else {
             // when keycode QMKBEST is released
         }
