@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |  UP  |      |      |                    |   #  |   $  |  /   |  \   |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | Left | Down | Right|      |-------.    ,-------|   ^  |   *  |   &  |   (  |   )  | ctrl |
+ * |      |      | Left | Down | Right|      |-------.    ,-------|   ^  |   *  |   &  |   (  |   )  | alt  |
  * |------+------+------+------+------+------|   [   |    |   ]   |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|   ' |   _  |   +  |   {  |   }   | shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | PGU  | C+U  | PGD  |      |                    |      | Vol- |      | Vol+ |      |      |
+ * |      |      | PGU  | C+U  | PGD  |      |                    |      | Vol- | Print| Vol+ |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      | C+R  | C+D  | C+L  |      |-------.    ,-------|      | Prev | Play | Next |      |      |
  * |------+------+------+------+------+------|       |    | Ins   |------+------+------+------+------+------|
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_ADJUST] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, KC_PGUP, FAST_MOVE_UP, KC_PGDOWN, XXXXXXX,                   XXXXXXX, KC_AUDIO_VOL_DOWN, XXXXXXX, KC_AUDIO_VOL_UP, XXXXXXX, XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_PGUP, FAST_MOVE_UP, KC_PGDOWN, XXXXXXX,                   XXXXXXX, KC_AUDIO_VOL_DOWN, KC_PSCREEN , KC_AUDIO_VOL_UP, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, FAST_MOVE_LEFT, FAST_MOVE_DOWN, FAST_MOVE_RIGHT, XXXXXXX,  XXXXXXX, KC_MEDIA_PREV_TRACK,  KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK,  XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL, KC_INS , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
                              _______, _______, _______, _______, _______,  _______, _______, _______ \
