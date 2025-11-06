@@ -1,8 +1,17 @@
 # Lily58-Keymap
 
-Add to bashrc:
+## Quick setup 
+
+- setup and build
 ```
-setxkbmap -layout us -variant altgr-intl
+python3 -m pip install qmk
+export QMK_HOME=$(pwd) 
+qmk setup 
+git clone git@github.com:galberding/Lily58-Keymap.git keyboards/lily58/keymaps/gag
 ```
 
-See [us-altgr-intl](https://github.com/google/us-altgr-intl)
+- flash
+
+```
+qmk flash -kb lily58 -km gag
+```

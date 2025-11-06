@@ -46,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT( \
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS, \
-  KC_LCTRL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_LALT, \
-  KC_LSPO,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_LBRC,  KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT, \
+  KC_LCTL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_LALT, \
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_LBRC,  KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT, \
                  KC_LGUI, KC_LALT, MO(_LOWER), KC_SPC,               KC_ENT, MO(_RAISE), KC_BSPC, KC_LGUI	\
 		     ),
 /* LOWER
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_ADJUST] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, KC_PGUP, FAST_MOVE_UP, KC_PGDOWN, XXXXXXX,                   XXXXXXX, KC_AUDIO_VOL_DOWN, KC_PSCREEN , KC_AUDIO_VOL_UP, XXXXXXX, XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_PAGE_UP, FAST_MOVE_UP, KC_PAGE_DOWN, XXXXXXX,                   XXXXXXX, KC_AUDIO_VOL_DOWN, KC_PRINT_SCREEN , KC_AUDIO_VOL_UP, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, FAST_MOVE_LEFT, FAST_MOVE_DOWN, FAST_MOVE_RIGHT, XXXXXXX,  XXXXXXX, KC_MEDIA_PREV_TRACK,  KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK,  XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL, KC_INS , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
                              _______, _______, _______, _______, _______,  _______, _______, _______ \
@@ -173,11 +173,11 @@ void windmove(uint16_t keycode, keyrecord_t *record){
 void switchBuf(uint16_t keycode, keyrecord_t *record){
   if (record->event.pressed) {
 	// when keycode QMKURL is pressed
- 	register_code(KC_LCTRL);
+ 	register_code(KC_LCTL);
 	register_code(KC_X);
       } else {
             // when keycode QMKURL is released
-	unregister_code(KC_LCTRL);
+	unregister_code(KC_LCTL);
 	unregister_code(KC_X);
 	tap_code(keycode);
       }
@@ -186,14 +186,14 @@ void switchBuf(uint16_t keycode, keyrecord_t *record){
 void ctrlMove(uint16_t keycode, keyrecord_t *record){
   if (record->event.pressed) {
     // when keycode QMKURL is pressed
-    register_code(KC_LCTRL);
+    register_code(KC_LCTL);
     register_code(keycode);
     /* register_code(KC_X); */
   } else {
     // when keycode QMKURL is released
     /* tap_code(keycode); */
     unregister_code(keycode);
-    unregister_code(KC_LCTRL);
+    unregister_code(KC_LCTL);
     /* unregister_code(KC_X); */
   }
 }
